@@ -1,7 +1,9 @@
-import { Router } from 'express';
+import { Router } from "express";
 
-import AuthController from './controllers/auth';
-import UsersController from './controllers/users';
+import { checkLogin } from "@utils/authorization";
+
+import AuthController from "./controllers/auth";
+import UsersController from "./controllers/users";
 
 const router = Router();
 
@@ -12,6 +14,9 @@ router.post('/auth/register', AuthController.register);
 // Users Routes
 router.get('/users', UsersController.getAllUsers);
 router.get('/users/:id', UsersController.getUserById);
+
+// Secret Routes
+router.delete('/users/:id', checkLogin, UsersController.removeUserById);
 
 
 export default router;

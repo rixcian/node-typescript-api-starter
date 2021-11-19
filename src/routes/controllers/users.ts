@@ -22,7 +22,7 @@ const getAllUsers = async (req: Request, res: Response<APIResponse>) => {
 
 interface GetUserByIdParams { id: string }
 
-const getUserById = async (req: Request<GetUserByIdParams>, res: Response) => {
+const getUserById = async (req: Request<GetUserByIdParams>, res: Response<APIResponse>) => {
   const em = RequestContext.getEntityManager()!;
   const userRep = em.getRepository(User);
 
@@ -36,7 +36,21 @@ const getUserById = async (req: Request<GetUserByIdParams>, res: Response) => {
 };
 
 
+
+interface RemoveUserByIdParams { id: string }
+
+const removeUserById = async (req: Request<RemoveUserByIdParams>, res: Response<APIResponse>) => {
+  const { id } = req.params;
+
+  res.send({
+    data: id,
+    error: null,
+  });
+}
+
+
 export default {
   getAllUsers,
-  getUserById
+  getUserById,
+  removeUserById
 };
