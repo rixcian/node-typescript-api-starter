@@ -1,11 +1,12 @@
 import {Request, Response} from "express";
 import {RequestContext} from "@mikro-orm/core";
 
-import {User} from "../../db/entities/User";
+import {APIResponse} from "types";
+import {User} from "@entities/User";
 
 
 
-const getAllUsers = async (req: Request, res: Response) => {
+const getAllUsers = async (req: Request, res: Response<APIResponse>) => {
   const em = RequestContext.getEntityManager()!;
   const userRep = em.getRepository(User);
 
