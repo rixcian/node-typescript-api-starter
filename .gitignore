@@ -1,0 +1,7 @@
+.git
+.code
+.idea
+build
+dist
+node_modules
+yarn-error.log
