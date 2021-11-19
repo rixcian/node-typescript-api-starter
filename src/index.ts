@@ -6,8 +6,9 @@ import {Request, Response} from "express";
 import {RequestContext} from "@mikro-orm/core";
 
 require('dotenv').config();
-import {initDB} from "./db";
+import {initDB} from "./db/init";
 import router from "./routes";
+
 
 const PORT = process.env.PORT || 8000;
 

@@ -16,6 +16,7 @@
 4. Copy these environment variables & update them in `.env`
     ```dotenv
     PORT=8000
+    SECRET=555FB26069A
     DB_NAME=apidb
     DB_USER=postgres
     DB_PASSWORD=secret
@@ -39,6 +40,7 @@
 4. Copy these environment variables & update them in `.env`
     ```dotenv
     PORT=8000
+    SECRET=555FB26069A
     DB_NAME=apidb
     DB_USER=postgres
     DB_PASSWORD=secret
