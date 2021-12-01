@@ -57,5 +57,11 @@ Creates a new migration file (in `src/db/migrations`) witch applied changes insi
 ### `yarn migration:up`
 Applies all (not applied) migrations to DB
 
+
+## Deployment
+1. `$ docker build . -t node-typescript-api`
+2. `$ docker run -p 8000:8000 -d --env-file .env --name api-starter node-typescript-api:latest`
+
+
 ## Linters
 `TODO`

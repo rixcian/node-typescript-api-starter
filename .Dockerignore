@@ -1,0 +1,18 @@
+# Prod
+dist
+
+# Dependencies
+node_module
+
+# Debug, Log & Error files
+yarn-error.log
+npm-debug.log
+
+# Dev files
+.git
+.env
+.env.sample
+.gitignore
+nodemon.json
+
+README.md
