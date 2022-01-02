@@ -14,10 +14,14 @@ import passportInit from "@utils/passport";
 const PORT = process.env.PORT || 8000;
 const app = express();
 
-// Initializing Middleware
+// CORS Setting
 app.use(cors());
+
+// Passport Initialization
 app.use(passport.initialize());
 passportInit(passport);
+
+// BodyParser Setting
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 

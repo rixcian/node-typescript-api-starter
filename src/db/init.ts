@@ -29,5 +29,7 @@ export const initDB = async () => {
     usersRep: orm.em.getRepository(User)
   }
 
+  console.log(`Successfully connected to ${process.env.DB_NAME} DB ...`);
+
   return db.em;
 };

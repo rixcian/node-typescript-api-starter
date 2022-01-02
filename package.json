@@ -11,7 +11,8 @@
     "start": "link-module-alias && node dist/index.js",
     "migration:up": "mikro-orm migration:up",
     "migration:create": "mikro-orm migration:create",
-    "genEntities": "mikro-orm generate-entities --save --path=./src/db/entities"
+    "entities:generate": "mikro-orm generate-entities --save --path=./src/db/entities",
+    "docker:build": "docker build . -t node-typescript-api"
   },
   "devDependencies": {
     "@mikro-orm/cli": "^4.5.9",

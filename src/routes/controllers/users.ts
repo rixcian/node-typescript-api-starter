@@ -1,19 +1,14 @@
 import {Request, Response} from "express";
-import {RequestContext} from "@mikro-orm/core";
 
+import {db} from "@db/init";
 import {APIResponse} from "types";
-import {User} from "@entities/User";
-
 
 
 const getAllUsers = async (req: Request, res: Response<APIResponse>) => {
-  const em = RequestContext.getEntityManager()!;
-  const userRep = em.getRepository(User);
-
-  const user = await userRep.findAll();
+  const users = await db.usersRep.findAll();
 
   return res.send({
-    data: user,
+    data: users,
     error: null
   });
 };
@@ -23,11 +18,8 @@ const getAllUsers = async (req: Request, res: Response<APIResponse>) => {
 interface GetUserByIdParams { id: string }
 
 const getUserById = async (req: Request<GetUserByIdParams>, res: Response<APIResponse>) => {
-  const em = RequestContext.getEntityManager()!;
-  const userRep = em.getRepository(User);
-
   const { id } = req.params;
-  const user = await userRep.findOne({ id });
+  const user = await db.usersRep.findOne({ id });
 
   return res.send({
     data: user,
